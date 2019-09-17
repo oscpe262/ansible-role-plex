@@ -1,3 +1,4 @@
+## roles/ansible-role-plex/tasks/plex.yml
 ---
 - name: Install Yum on Fedora
   dnf:
@@ -54,3 +55,13 @@
     name: plexmediaserver
     enabled: true
   notify: restart plex
+
+- name: "Add user 'plex' to users-group"
+  user:
+    name: plex
+    groups: users
+    append: yes
+    system: yes
+  notify: restart plex
+  when: plex_add_to_users
+...

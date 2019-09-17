@@ -54,6 +54,9 @@ plexupdate_autoupdate: true
 plexupdate_public: true
 # If Plexupdate will notify by mail after cron error
 plexupdate_notify: false
+
+# Wether to add plex to the group 'users'. Will add if true
+plex_add_to_users: true
 ```
 
 ## Dependencies
